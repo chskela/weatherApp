@@ -39,12 +39,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: '600',
   },
   sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
+    marginTop: 16,
+    marginBottom: 16,
+    fontSize: 16,
     fontWeight: '400',
   },
 });
