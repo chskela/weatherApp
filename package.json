@@ -1,6 +1,7 @@
 {
   "name": "weatherapp",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "description": "wheather application for Android",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -9,6 +10,12 @@
     "test": "jest",
     "lint": "eslint ."
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chskela/weatherApp.git"
+  },
+  "author": "Aleksey Chistyakov",
+  "homepage": "https://github.com/chskela/weatherApp#readme",
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.4",
     "@react-native-community/geolocation": "^2.0.2",
