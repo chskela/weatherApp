@@ -4,6 +4,7 @@ import Geolocation from '@react-native-community/geolocation';
 export default function usePosition() {
   const [position, setPosition] = useState({latitude: 0, longitude: 0});
   const [error, setError] = useState(null);
+
   useEffect(() => {
     Geolocation.getCurrentPosition(
       position => {
