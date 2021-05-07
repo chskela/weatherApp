@@ -2,17 +2,19 @@ import React from 'react';
 import {FlatList} from 'react-native';
 
 import ItemList from './ItemList';
-
-const DATA = ['Shoci', 'Moscow'];
+import {useSelector} from 'react-redux';
+import {selectCity} from '../../app/citysSlice';
 
 export default function CityList() {
+  const citys = useSelector(selectCity);
+
   const renderItem = ({item}) => <ItemList title={item} key={item} />;
 
   return (
     <FlatList
-      data={DATA}
+      data={citys}
       renderItem={renderItem}
-      keyExtractor={item => item.id}
+      keyExtractor={item => item}
     />
   );
 }

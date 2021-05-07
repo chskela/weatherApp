@@ -1,11 +1,13 @@
 import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 
-import {StyleSheet, Text, View, Button} from 'react-native';
 import CityList from './CityList';
+import DrawerForm from './DrawerForm';
 
 export default function Drawer({refDrawer}) {
   return (
     <View style={[styles.container, styles.navigationContainer]}>
+      <DrawerForm />
       <Text style={styles.paragraph}>List of cities</Text>
       <CityList />
     </View>
