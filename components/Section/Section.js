@@ -1,34 +1,11 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import {StyleSheet, Text, View} from 'react-native';
 
-export default Section = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === 'dark';
+export default Section = ({children, title}) => {
   return (
     <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+      <Text style={styles.sectionTitle}>{title}</Text>
+      <View style={styles.sectionDescription}>{children}</View>
     </View>
   );
 };
@@ -43,9 +20,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   sectionDescription: {
-    marginTop: 16,
-    marginBottom: 16,
-    fontSize: 16,
-    fontWeight: '400',
+    marginTop: 8,
+    marginBottom: 8,
   },
 });

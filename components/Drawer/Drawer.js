@@ -9,7 +9,7 @@ export default function Drawer({refDrawer}) {
     <View style={[styles.container, styles.navigationContainer]}>
       <DrawerForm />
       <Text style={styles.paragraph}>List of cities</Text>
-      <CityList />
+      <CityList refDrawer={refDrawer} />
     </View>
   );
 }

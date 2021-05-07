@@ -1,6 +1,4 @@
 import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit';
-import citysReducer from './citysSlice';
-import currentCityReducer from './currentCitySlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   persistStore,
@@ -12,17 +10,12 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import {combineReducers} from 'redux';
+import rootReducer from './rootReducer';
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
 };
-
-const rootReducer = combineReducers({
-  citys: citysReducer,
-  currentCity: currentCityReducer,
-});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
@@ -35,6 +28,6 @@ export default () => {
       },
     }),
   });
-  let persistor = persistStore(store);
+  const persistor = persistStore(store);
   return {store, persistor};
 };

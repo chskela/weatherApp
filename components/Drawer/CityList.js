@@ -5,10 +5,12 @@ import ItemList from './ItemList';
 import {useSelector} from 'react-redux';
 import {selectCity} from '../../app/citysSlice';
 
-export default function CityList() {
+export default function CityList({refDrawer}) {
   const citys = useSelector(selectCity);
 
-  const renderItem = ({item}) => <ItemList title={item} key={item} />;
+  const renderItem = ({item}) => (
+    <ItemList title={item} key={item} refDrawer={refDrawer} />
+  );
 
   return (
     <FlatList

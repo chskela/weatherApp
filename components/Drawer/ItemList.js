@@ -7,10 +7,11 @@ import Colors from '../Colors/Colors';
 import {setCurrentCity} from '../../app/currentCitySlice';
 import {removeCity} from '../../app/citysSlice';
 
-export default function ItemList({title}) {
+export default function ItemList({title, refDrawer}) {
   const dispatch = useDispatch();
   function onPressFunction() {
     dispatch(setCurrentCity(title));
+    refDrawer.current.closeDrawer();
   }
 
   return (
